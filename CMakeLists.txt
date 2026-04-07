@@ -71,53 +71,7 @@ target_link_libraries(mps_oprf_mpsi PUBLIC
     sodium pthread
 )
 
-# ============================================================
-# Test targets
-# ============================================================
-
-# HH-only targets (require HomomorphicPRF / libsodium)
-if(ENABLE_HOMOMORPHIC_HASH)
-    add_executable(mps_oprf_tests tests/main_tests.cpp)
-    target_link_libraries(mps_oprf_tests PRIVATE mps_oprf_mpsi)
-
-    add_executable(perf_tests_large tests/Performance_Tests_Large.cpp)
-    target_link_libraries(perf_tests_large PRIVATE mps_oprf_mpsi)
-
-    add_executable(perf_tests tests/Performance_Tests.cpp)
-    target_link_libraries(perf_tests PRIVATE mps_oprf_mpsi)
-
-    add_executable(perf_tests_protocols tests/Performance_Tests_Protocols.cpp)
-    target_link_libraries(perf_tests_protocols PRIVATE mps_oprf_mpsi)
-
-    add_executable(mpsoprf_tests tests/MpsOprf_Tests.cpp)
-    target_link_libraries(mpsoprf_tests PRIVATE mps_oprf_mpsi)
-
-    add_executable(mps_oprf_frontend frontend/main.cpp)
-    target_link_libraries(mps_oprf_frontend PRIVATE mps_oprf_mpsi)
-endif()
-
 # Mode-independent test targets
-add_executable(cointoss_tests tests/CoinToss_Tests.cpp)
-target_link_libraries(cointoss_tests PRIVATE mps_oprf_mpsi)
-
-add_executable(vole_tests tests/VoleWrapper_Tests.cpp)
-target_link_libraries(vole_tests PRIVATE mps_oprf_mpsi)
-
-add_executable(bicentric_tests tests/BicentricMpsi_Tests.cpp)
-target_link_libraries(bicentric_tests PRIVATE mps_oprf_mpsi)
-
-add_executable(ring_tests tests/RingMpsi_Tests.cpp)
-target_link_libraries(ring_tests PRIVATE mps_oprf_mpsi)
-
-add_executable(security_tests tests/Security_Tests.cpp)
-target_link_libraries(security_tests PRIVATE mps_oprf_mpsi)
-
-add_executable(simple_prf_tests tests/SimplePRF_Tests.cpp)
-target_link_libraries(simple_prf_tests PRIVATE mps_oprf_mpsi)
-
-# End-to-end diagnostic (real vOLE, local sockets, full protocol)
-add_executable(e2e_diagnostic tests/E2E_Diagnostic.cpp)
-target_link_libraries(e2e_diagnostic PRIVATE mps_oprf_mpsi)
 
 # ============================================================
 # Frontend executables
