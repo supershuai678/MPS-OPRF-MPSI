@@ -1,7 +1,7 @@
 #!/bin/bash
 # Reproduce Table 5 — full parameter sweep across all 9 protocols
 #
-# Protocols: oprf, oprf-hh, bc, bc-hh, ring, ring-hh, bzs, oring-ring, oring-star
+# Protocols: oprf, bc, ring
 # Set sizes: 2^12, 2^16, 2^20
 # (n,t) combos: (4,1) (4,3) (10,1) (10,4) (10,9) (15,1) (15,4) (15,7) (15,14)
 # Networks: LAN
@@ -20,7 +20,7 @@ LOG_DIR="$PROJECT_DIR/logs"
 
 mkdir -p "$LOG_DIR"
 
-PROTOCOLS="oprf oprf-hh bc bc-hh ring ring-hh bzs oring-ring oring-star mpsi-paxos multipartypsi"
+PROTOCOLS="oprf bc ring"
 SET_SIZES="12 16 20"
 NT_COMBOS="4,1 4,3 10,1 10,4 10,9 15,1 15,4 15,7 15,14"
 SETTINGS="lan wan"
