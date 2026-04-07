@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_compile_options(-maes -mpclmul -msse4.1 -mavx -mavx2)
 
 # Dependency paths
-set(DEPS_DIR "${CMAKE_SOURCE_DIR}/thirdparty_bzs" CACHE PATH "BZS-MPSI source directory")
+set(DEPS_DIR "${CMAKE_SOURCE_DIR}/thirdparty" CACHE PATH "BZS-MPSI source directory")
 set(INSTALL_PATH "${DEPS_DIR}/out/install/linux" CACHE PATH "Dependency install prefix")
 set(BUILD_PATH "${DEPS_DIR}/out/build/linux" CACHE PATH "Dependency build directory")
 
@@ -81,9 +81,6 @@ target_link_libraries(mps_oprf_mpsi PUBLIC
 add_executable(perf_network frontend/perf_network.cpp)
 target_link_libraries(perf_network PRIVATE mps_oprf_mpsi)
 
-# Debug intersection test (single process, no network)
-add_executable(debug_intersection frontend/debug_intersection.cpp)
-target_link_libraries(debug_intersection PRIVATE mps_oprf_mpsi)
 
 # ============================================================
 # Install
