@@ -2,7 +2,7 @@
 # Run a single benchmark: launch n processes for the given protocol
 #
 # Usage: bash scripts/run_benchmark.sh <proto> <n> <t> <nn> [net] [port_base]
-#   proto: oprf, bc, ring, oprf-hh, bc-hh, ring-hh, bzs, oring-ring, oring-star, mpsi-paxos, multipartypsi
+#   proto: oprf, bc, ring
 #   n: number of parties
 #   t: malicious threshold
 #   nn: log2 of set size
